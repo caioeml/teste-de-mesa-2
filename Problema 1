@@ -1,5 +1,7 @@
 using System;
 
+decimal valorFinal = 0;
+
 Console.WriteLine("Informe o valor presente");
 decimal valorPresente = decimal.Parse(Console.ReadLine());    
 
@@ -14,13 +16,11 @@ decimal percentualJuros = taxaJuros / 100;
 Console.WriteLine( "\n------------ Tabela de Rendimento ------------\n");
 
 Console.WriteLine(">>> Rendimento Mensal (a.m.)");
-Console.WriteLine("Mês\tValor Futuro (R$)");
+Console.WriteLine("ValorP\tTaxa%\tMes\tValorF(R$)");
 
 for (int mes = 1; mes <= periodoMeses; mes++)
 {
-    valorPresente = valorPresente * (1 + percentualJuros);
+    valorFinal = valorPresente * (1 + percentualJuros);
 
-    Console.WriteLine($"{mes}\t{valorPresente:F2}");
+    Console.WriteLine($"{valorPresente}\t{taxaJuros}\t{mes}\t{valorFinal:F2}");
 }
-
-
