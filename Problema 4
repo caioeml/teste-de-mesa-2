@@ -18,7 +18,7 @@ class Program
 
         decimal percentualJuros = taxaJuros / 100m;
         int mesResgate = 5;
-        int periodoAM = 0; 
+        int periodoAM = 0;
 
         Console.WriteLine();
         Console.WriteLine("valor presente\t taxa de juros\t mes\t rendimento\t renda liquida\t renda acumulada\t resgate\t SALDO");
@@ -27,6 +27,7 @@ class Program
         {
             periodoAM++;
 
+            //decimal rendimento = valorPresente * (decimal)Math.Pow((double)(1m + percentualJuros), periodoAM); <- Fórmula de juros composto
             decimal rendimento = valorPresente * (1m + percentualJuros * periodoAM);
             decimal rendaLiquida = rendimento - valorPresente;
             decimal resgate = (mes == mesResgate) ? rendaLiquida : 0m;
@@ -42,7 +43,7 @@ class Program
                 rendimento, rendaLiquida, rendaAcumulada, resgate, saldo
             ));
 
-            
+
             if (mes == mesResgate)
             {
                 valorPresente = saldo;
