@@ -27,7 +27,7 @@ for (int ano = 1; ano <= periodoAnos; ano++)
     valorFinal = valorFinal * (1 + percentualJuros);
     RendimentoLiquido = valorFinal - valorPresente; 
 
-    Console.WriteLine($"{valorPresente}\t{taxaJuros}\t{ano}\t{valorFinal:F2}\t\t{RendimentoLiquido}");
+    Console.WriteLine($"{valorPresente}\t{taxaJuros}\t{ano}\t{valorFinal:F2}\t\t{RendimentoLiquido:F2}");
 
     
 }
